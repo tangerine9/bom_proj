@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+        <meta charset="utf-8">
     <link rel="stylesheet" href="/css/bom/basic.css" type="text/css">
     <!-- jQuery library (served from Google) -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <!-- bxSlider Javascript file -->
 <script src="/lib/dist/jquery.bxslider.min.js"></script>
 <!-- bxSlider CSS file -->
-<link href="/lib/dist/jquery.bxslider.css" rel="stylesheet" />
-    <meta charset="utf-8">
+<link href="/lib/dist/jquery.bxslider1.css" rel="stylesheet" />
+
   </head>
   <body>
 

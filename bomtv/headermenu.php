@@ -1,25 +1,33 @@
-<nav id="topMenu">
-    <ul>
-        <li class="topMenuLi"> LECTURES
-            <ul class="submenu">
-                <li><a class="submenuLink longLink">속깊은 자바스크립트 강좌</a></li>
-                <li><a class="submenuLink longLink">밑바닥부터 홈페이지 만들기</a></li>
-                <li><a class="submenuLink longLink">안드로이드 앱 개발</a></li>
-            </ul>
-        </li>
-        <li>|</li>
-        <li class="topMenuLi"></li>
-        <li>|</li>
-        <li class="topMenuLi"> TAG CLOUD
-            <ul class="submenu">
-                <li><b class="menuLink" >자바스크립트</b></li>
-                <li><b class="menuLink" >K100D</b></li>
-                <li><b class="menuLink" >강좌</b></li>
-            </ul>
-        </li>
-        <li>|</li>
-        <li class="topMenuLi"><b class="menuLink" > MEDIA LOG</b> </li>
-        <li>|</li>
-        <li class="topMenuLi"> <b class="menuLink" >LOCATION LOG</b> </li>
-    </ul>
-</nav>
+<html>
+  <head>
+    <meta charset="utf-8">
+<style type="text/css">
+.menubar{
+  margin: 0 auto;
+  width: 825px;
+  position: relative;
+left: 60px;
+top: 300px;
+}
+
+</style>
+  </head>
+
+  <body>
+    <div class="menubar">
+      <ul class="nav">
+        <li><a href="#"></a>
+          <div class="">
+
+          </div>
+      </li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+
+
+      </ul>
+    </div>
+
+  </body>
+</html>

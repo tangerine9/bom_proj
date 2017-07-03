@@ -25,3 +25,6 @@ z-index: 7910;
   position: relative;
   height: 100px;
 }
+#header .header_menu{
+  float:left;
+}
