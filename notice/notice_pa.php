@@ -39,9 +39,13 @@
 								$row['date'] = $date;
 					?>
 				<tr>
-					<td class="no"> <?php echo $row['num']?></td>
+					<td class="no"> <?php echo $row['num']; ?></td>
 					<td class="title"> <?php echo $row['type']?></td>
-					<td class="author"> <a href="#"> <?php echo $row['title']?></a></td>
+					<td class="author">
+            <a href="./view.php?bno=<?php echo $row['num'] ?>">
+              <?php echo $row['title']?>
+            </a>
+          </td>
 					<td class="date"><?php echo $row['writer']?></td>
 					<td class="hit"><?php echo $row['date']?></td>
           <td class="hit"><?php echo $row['count']?></td>
@@ -52,6 +56,7 @@
 					?>
 			</tbody>
 		</table>
+    <a href="./writer.php" style="padding-left:700px;"> 글쓰기</a>
 	</article>
 </body>
 </html>
