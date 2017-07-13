@@ -1,12 +1,12 @@
-<?php require_once("./dbconfig.php");
+<?php require_once("../dbconfig.php");
 $bNo = $_GET['num'];
 
-$sql = 'delete from bom_notice where num='.$bNo ;
+$sql = 'delete from notice where num='.$bNo ;
 $result = $db->query($sql);
 
 if($result) {
   $msg = "정상적으로 글이 삭제되었습니다.";
-  $replaceURL = './notice_pa.php' ;
+  $replaceURL = '../index.php?pin=1' ;
 } else {
   $msg = "글을 삭제하지 못했습니다.";
 ?>

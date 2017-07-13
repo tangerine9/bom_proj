@@ -1,19 +1,21 @@
 <?php
-	require_once("./dbconfig.php");
+	require_once("../dbconfig.php");
 
   $b_ck= $_POST['chk_info'];
 	$bTitle = $_POST['bTitle'];
 	$bContent = $_POST['bContent'];
+	$num=$_POST['num'];
 
 	$date = date('Y-m-d H:i:s');
 
-	$sql = 'insert into bom_notice values
-  ("", 0 ,"'.$b_ck.'","' . $bTitle . '","주인",now(),1, "' . $bContent . '")';
+	$sql = 'update notice set type="'.$b_ck.'" ,title="' . $bTitle . '" , content="' .
+	$bContent . '" where flag=3 and num='.$num;
+
 
 	$result = $db->query($sql);
 	if($result) {
 		$msg = "정상적으로 글이 등록되었습니다.";
-		$replaceURL = './notice_pa.php' ;
+		$replaceURL = '../index.php?pin=1' ;
 	} else {
 		$msg = "글을 등록하지 못했습니다.";
 ?>

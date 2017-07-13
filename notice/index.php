@@ -36,29 +36,24 @@
         }
 
         .header {
-
             width: 100%;
             height: 10%;
             background-color: #FFA2A2;
-
         }
 
         .menu {
-
             float: left;
             width: 80px;
             height: auto;
         }
 
         .main {
-
             margin-left: 80px;
             width: 100%;
             height: auto;
         }
 
         .footer {
-
             width: 100%;
             height: auto;
         }
@@ -82,12 +77,6 @@
           $branch='./noti/write.php';
         }else if ($_GET['pin'] == 7) {
           $branch='./noti/delete_update.php';
-        }else if ($_GET['pin'] == 8) {
-          $branch='./category/pro_cate_form.php';
-        }else if ($_GET['pin'] == 9) {
-          $branch='./category/pro_proc.php';
-        }else if ($_GET['pin'] == 10) {
-          $branch='./category/pro_reg.php';
         }
 
      ?>
@@ -97,10 +86,6 @@
            location.replace('./index.php');
          } else if (index==2){
            location.replace('./index.php?pin=1');
-         } else if (index==3){
-           location.replace('./index.php?pin=8');
-         } else if (index==4){
-           location.replace('./index.php?pin=10');
          }
        }
      </script>
@@ -118,8 +103,7 @@
         <div class="menu" align="center">
             <button type="button" name="button" onclick="qa(1)"> 공지사항 </button>
             <button type="button" name="button" onclick="qa(2)"> Q&A </button>
-            <button type="button" name="button" onclick="qa(3)"> 카테고리 </button>
-            <button type="button" name="button" onclick="qa(4)"> 상품등록 </button>
+
         </div>
 
         <div class="main">
