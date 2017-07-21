@@ -1,0 +1,8 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+RewriteRule ^HJ&SMshopping   index.php [nc,qsa]
+RewriteRule ^testshopping   index.php [nc,qsa]
+RewriteRule ^/([0-9]+)/$   index.php [nc,qsa]

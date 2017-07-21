@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no", initial-scale="1.0">
+  <link rel="stylesheet" type="text/css" href="./css/reset1.css">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<link rel="stylesheet" type="text/css" href="./css/nav.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <nav>
+   <div class="nav-wrapper">
+     <a href="#" class="brand-logo center">Test</a>
+     <ul id="nav-mobile valign" class="left">
+       <li><a id="home_btn" href="index.html" class="material-icons">home</a></li>
+     </ul>
+   </div>
+ </nav>
+    <div id="main_wrap">
+    <a id="signin" class="waves-effect waves-light btn main_btn">회원가입창</a>
+    <a id="myinfo" class="waves-effect waves-light btn main_btn">내 정보</a>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#signin').on('click',function(){
+    location.href="signin.html"
+  });
+  $('#myinfo').on('click',function(){
+  location.href="myinfo.html"
+  });
+});
+</script>
+  </body>
+</html>

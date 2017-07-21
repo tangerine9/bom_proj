@@ -1,0 +1,25 @@
+RewriteCond %{REQUEST_FILENAME} !-f
+
+PHP_FLAG register_globals ON
+PHP_VALUE mysql.default_charset UTF8
+
+
+php_flag allow_url_fopen 1
+RewriteEngine On
+
+ErrorDocument 404 http://delphi14.cafe24.com/404.php
+AddDefaultCharset utf-8
+
+
+#RewriteRule ^user/@([0-9,a-z,A-Z]+) user.php?id=$1
+
+RewriteRule ^dashboard                                  dashboard.php
+RewriteRule ^export/([^/]+)/([^/]+)/?$             index.php?email=$1&month=$2 [NC,L,QSA]
+RewriteRule ^comic/([^/]+)/([^/]+)/?$              index.php?email=$1&month=$2
+RewriteRule ^iosetting                             index.php?mode=inout_setting
+
+
+#RewriteRule ^pwlink/([^/]+)/([^/]+)/?$             inc/prc_forgot_link.php?email=$1&rpw=$2 [NC,L,QSA]
+
+#RewriteRule    ^products/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$    get_product_by_name.php?category_name=$1&product_name=$2    [NC,L] $
+#RewriteRule    ^blog/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$    get_blog_post_by_title.php?category_name=$1&post_title=$2    [NC,L]    $

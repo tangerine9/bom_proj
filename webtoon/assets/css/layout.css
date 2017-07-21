@@ -1,0 +1,241 @@
+/*----------------------------------------------------
+ 리셋
+----------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video 					
+{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section  { display: block; }
+body 									    { line-height: 1; }
+ol, ul 									    { list-style: none; }
+blockquote, q 							    { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after 						    { content: ''; content: none; }
+table 									    { border-collapse: collapse; border-spacing: 0; }
+a, a:hover, a:active, a:focus 			    { color: #414141;	text-decoration: none; outline: none !important; overflow: hidden; }
+img 									    { max-width: 100%; }
+
+/*----------------------------------------------------
+ 웹폰트
+----------------------------------------------------*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body {
+    font-family: "Nanum Gothic", sans-serif !important;
+	line-height: 1.6em;
+	font-size: 12px;
+}
+
+/*----------------------------------------------------
+ 레이아웃 속성
+----------------------------------------------------*/
+body           { background-color: #F7F7F7; }
+#header        { background-color: #FFF; position: relative; }
+#footer        { background-color: #fff; width: 100%; float: left; margin-top: 60px; height: 40px;}
+#main	       { min-height: 850px; margin: 20px auto;}
+#sidemenu      { min-height: 850px; width: 250px; float: left;}
+.contents      { width: 100%; float: left; background-color: #FFF; border:1px solid #DDD;}
+.inner		   { position: relative; width: 1080px; margin: 0 auto; }
+.box		   { background-color: #FFF; padding: 5px; border: 1px solid #DDD; height: 100%; float: left; width: 100%; margin-bottom: 10px; }
+.padding	   { padding: 5px; }
+.slick-slide   { outline: none; }
+
+.section 	   { margin-top: 20px; }
+.section h1    { 
+font-weight: bold;
+border-bottom: 2px solid #79d5ff;
+margin: 0px;
+font-size: 15px;
+float: left;
+padding: 10px;
+padding-top: 5px;
+}
+.bgW		   { background-color: #FFF; }
+/*----------------------------------------------------
+ 공통 속성
+----------------------------------------------------*/
+
+/* 부트스트랩 커스텀 */
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/* 로딩 */
+#loading 				  { position: fixed; z-index: 3000; top: 50%; left: 50%; margin-left: -25px; margin-top: -25px; display: inline-block; width: 50px; height: 50px; border: 5px solid #ffbb54; border-radius: 50%; border-top-color: #ff7f2d; animation: spin 1s ease-in-out infinite; -webkit-animation: spin 1s ease-in-out infinite; }
+
+@keyframes spin 		  { to { -webkit-transform: rotate(360deg); } }
+@-webkit-keyframes spin   { to { -webkit-transform: rotate(360deg); } }
+
+
+/*----------------------------------------------------
+ 분기점 조정
+----------------------------------------------------*/
+
+/* 모바일 */
+    .noSmall   { display: none; }
+    .noMedium  { display: block; }
+
+/* PC */
+@media screen and (min-width: 980px) {
+	.noSmall   { display: block; } 
+    .noMedium  { display: none; }
+}
+
+/*----------------------------------------------------
+ 라디오 버튼
+----------------------------------------------------*/
+.radio {
+  padding-left: 20px; }
+.radio label {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+    padding-left: 5px; }
+.radio label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  left: 0;
+  margin-left: -20px;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-transition: border 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out;
+      transition: border 0.15s ease-in-out; }
+.radio label::after {
+  display: inline-block;
+  position: absolute;
+  content: " ";
+  width: 11px;
+  height: 11px;
+  left: 3px;
+  top: 3px;
+  margin-left: -20px;
+  border-radius: 50%;
+  background-color: #555555;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+      transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33); }
+.radio input[type="radio"] {
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.radio input[type="radio"]:focus + label::before {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px; }
+.radio input[type="radio"]:checked + label::after {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+      transform: scale(1, 1); }
+.radio input[type="radio"]:disabled {
+    cursor: not-allowed;
+}
+.radio input[type="radio"]:disabled + label {
+      opacity: 0.65; }
+.radio input[type="radio"]:disabled + label::before {
+        cursor: not-allowed; }
+.radio.radio-inline {
+    margin-top: 0; }
+
+.radio-primary input[type="radio"] + label::after {
+  background-color: #337ab7; }
+.radio-primary input[type="radio"]:checked + label::before {
+  border-color: #337ab7; }
+.radio-primary input[type="radio"]:checked + label::after {
+  background-color: #337ab7; }
+
+.radio-danger input[type="radio"] + label::after {
+  background-color: #d9534f; }
+.radio-danger input[type="radio"]:checked + label::before {
+  border-color: #d9534f; }
+.radio-danger input[type="radio"]:checked + label::after {
+  background-color: #d9534f; }
+
+.radio-info input[type="radio"] + label::after {
+  background-color: #5bc0de; }
+.radio-info input[type="radio"]:checked + label::before {
+  border-color: #5bc0de; }
+.radio-info input[type="radio"]:checked + label::after {
+  background-color: #5bc0de; }
+
+.radio-warning input[type="radio"] + label::after {
+  background-color: #f0ad4e; }
+.radio-warning input[type="radio"]:checked + label::before {
+  border-color: #f0ad4e; }
+.radio-warning input[type="radio"]:checked + label::after {
+  background-color: #f0ad4e; }
+
+.radio-success input[type="radio"] + label::after {
+  background-color: #5cb85c; }
+.radio-success input[type="radio"]:checked + label::before {
+  border-color: #5cb85c; }
+.radio-success input[type="radio"]:checked + label::after {
+  background-color: #5cb85c; }
+
+input[type="checkbox"].styled:checked + label:after,
+input[type="radio"].styled:checked + label:after {
+  font-family: 'FontAwesome';
+  content: "\f00c"; 
+  outline: none;
+}
+input[type="checkbox"] .styled:checked + label::before,
+input[type="radio"] .styled:checked + label::before {
+  color: #fff; }
+input[type="checkbox"] .styled:checked + label::after,
+input[type="radio"] .styled:checked + label::after {
+  color: #fff; }
+
+/* ============================================================
+  ANIMATED UNDERLINE
+============================================================ */
+.cmn-t-underline {
+  position: relative;
+}
+.cmn-t-underline:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 0;
+  height: 3px;
+  background-color: #50c3f8;
+  content: "";
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.cmn-t-underline:hover:after {
+  width: 100%;
+}
+
+#mainMenu_overlay .cmn-t-underline:after {
+	bottom: 5px;
+}

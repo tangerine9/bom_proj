@@ -1,0 +1,686 @@
+//----------------------------------------------------
+// 공통속성
+//----------------------------------------------------
+// 테마 색상
+@mainColor 	        : rgb(153,223,255);
+/*#4bb8eb*/
+@mainColor_point    : #50c3f8;
+
+@mainColor_pointText : #00a3ed;
+//@mainColor_point    : rgb(75, 165, 207);
+// 아바타
+.avatar 	  		{
+	display: block; 
+	width: 50px; 
+	height: 50px; 
+	border-radius: 100%; 
+	background-position: center;
+	background-size:cover;
+	background-repeat: no-repeat; 
+	border: 1px solid #414141; 
+	margin: 5px; 
+}
+//----------------------------------------------------
+// 헤더
+//----------------------------------------------------
+// 헤더
+#header {
+	background-color: #FFF;
+	width: 100%;
+	height: 220px;
+	border-bottom: 1px solid #d1d8e4;
+	transition: 3s;
+	// 로고
+	.logo {
+		position: absolute;
+		top: -70px;
+		left: 0px;
+		width: 300px;
+	}//logo
+	// 검색
+	input {
+		position: absolute;
+		top: 55px;
+		right: 330px;
+		border: 2px solid @mainColor_point;
+		display: block;
+		width: 360px;
+		padding: 10px 15px;
+		transition: 0.5s;
+		font-weight: bold;
+		height: 50px;
+		font-size: 16px;
+	}
+	input:focus {
+		background-color: rgba(83, 209, 255, 0.9);
+		color: #FFF;
+		::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: #FFF;
+		}
+		::-moz-placeholder { /* Firefox 19+ */
+		  color: #FFF;
+		}
+		:-ms-input-placeholder { /* IE 10+ */
+		  color: #FFF;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+		  color: #FFF;
+		}
+	}
+	.search_btn {
+		position: absolute;
+		top: 55px;
+		right: 280px;
+		background-color: @mainColor_point;
+		width: 50px;
+		height: 50px;
+	}
+	// 메인메뉴
+	#mainMenu {
+		position: absolute;
+		width: 100%;
+		bottom: 0px;
+		background-color: #FFF;
+		height: 55px;
+		line-height: 43px;
+		li {
+			float: left;
+			 a {
+				font-weight: bold;
+				font-size: 16px;
+				padding: 7px 10px;
+				display: block;
+				transition: 0.3s;
+			 }
+			 a:hover {
+				/*opacity: 0.7;*/
+				color: #50c3f8;
+			 }
+			 a.home {
+				display: block;
+				width: 60px;
+				text-align: center;
+				color: @mainColor_point;
+			 }
+			 a.sector {
+				color: @mainColor_pointText;
+				margin-left: 30px;
+				font-size: 11.5px;
+			 }
+			 a.more {
+				margin-left: 150px;
+			 }
+		}
+	}
+	// 메인메뉴
+	#mainMenu_overlay {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		background-color: @mainColor;
+		height: 40px;
+		line-height: 26px;
+		li {
+			float: left;
+			 a {
+				font-weight: bold;
+				font-size: 14px;
+				padding: 7px 10px;
+				display: block;
+				transition: 0.3s;
+			 }
+			 a:hover {
+				/*opacity: 0.7;*/
+				color: #FFF;
+			 }
+			 a.home {
+				display: block;
+				width: 60px;
+				text-align: center;
+				color: #FFF;
+			 }
+			 a.sector {
+				color: #FFF6DF;
+				margin-left: 30px;
+				font-size: 11.5px;
+			 }
+			 a.more {
+				margin-left: 150px;
+			 }
+		}
+	}
+}
+// 헤더비주얼 배경
+.onBg 				{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../img/mockup/visualarea/visualarea3.jpg);
+}
+.onBg2 				{
+	background-position: bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../img/mockup/visualarea/visualarea3.jpg);
+}
+//----------------------------------------------------
+// 사이드
+//----------------------------------------------------
+.moreBtn {
+	cursor: pointer;
+	float: right;
+	font-size: 11px;
+	color: #777;
+}
+
+// 측면배너
+#floatL				{
+	width: 110px;
+	position: absolute;
+	top: 245px;
+	right: 50%;
+	margin-right: 545px;
+	z-index: 200;
+}
+#floatL_fixed 		{
+	width: 110px;
+    position: absolute;
+    top: 245px;
+    right: 50%;
+    margin-right: 545px;
+    z-index: 200;
+}
+
+// 랭킹 바
+#ranking 			{
+	ul {
+		margin-bottom:15px;
+		padding: 5px;
+		h1 { 
+			font-weight: bold;
+			font-size: 13px;
+			color: #FFF;
+			background-color: #50c3f8;
+			padding: 3px;
+			text-align: center;
+			margin-bottom: 7px;
+		}//h1
+		li {			
+			margin-bottom: 5px;
+			a {
+				width: 90px; 
+				display:block;
+				overflow:hidden;
+				text-overflow: ellipsis;
+				white-space:nowrap; 
+				font-size: 12px;		
+				img {
+					width: 15px;
+					margin-right: 5px;
+				}
+				em {
+					background-color: #5d5d5d;	
+					width: 15px;
+					height: 15px;
+					display: block; 
+					float: left; 
+					text-align: center;
+					border-radius: 100%;
+					line-height: 15px; 
+					margin-top: 5px;
+					margin-right: 3px;
+					color: #FFF; 
+					font-size: 11px;
+				}//em
+			}//a
+		}//li
+	}//ul
+}
+// 사이드 미니 타이틀
+h6.rnb_title 		{
+	font-size: 13px;
+	margin: 0px 10px 10px 10px;
+	border-bottom: 1px dotted #DDD;
+	padding: 5px;
+}	
+// 팔로워
+#follower 			{
+	width: 100%;
+}
+// 그룹
+#group 				{
+	width: 100%; 
+	height: 165px; 
+	.group { 
+		display: block;
+		width: 70px;
+		height: 70px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border: 1px solid #DDD;
+		margin: 5px;
+		float: left;
+	}
+}
+// 썸네일 박스
+.thumbBox			{
+	display: block;
+	width: 150px;
+	height: 150px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: 1px solid #DDD;
+	margin: 5px;
+}
+//----------------------------------------------------
+// 풋터
+//----------------------------------------------------
+
+
+//----------------------------------------------------
+// 홈
+//----------------------------------------------------
+// 메인비주얼
+#view_slide 		{
+	.mainvisual {
+		width: 100%;
+		width: 780px;
+		height: 250px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin-bottom: 15px;
+	}
+}
+// 로그인 박스
+#loginBox 			{
+	padding: 15px;
+	input {		
+		width: 100%;
+		padding: 8px;
+		border: 1px solid #DDD;
+		border-radius: 5px;
+		margin-bottom: 10px;
+	}
+	.loginBtn {
+		color: #FFF;
+		background-color: @mainColor_point;
+		display: block;
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		margin-top: 5px;
+		font-weight: bold;
+		transition: 0.3s;
+	}
+	.loginBtn:hover {
+		opacity: 0.8;
+	}
+	.more {
+		font-size: 12px;
+		margin-right: 10px;
+	}
+	.login_more {
+		margin-top: 10px;
+	}
+}
+// 게시판
+.board 				{
+	h1 {
+		background-color: #50c3f8;
+		text-align: center;
+		font-weight: bold;
+		margin-bottom: 10px;
+		height: 28px;
+		line-height: 28px;
+		border: 1px solid #50c3f8;
+		font-size: 14px;
+	}
+	li {
+		padding-left: 10px;
+		span {
+			font-size: 13px;
+		}
+		span.count {
+			color: @mainColor_point;
+			margin-left: 10px;
+			font-size: 12px;
+		}
+		span.regidate {
+			float: right;
+			font-size: 11px;
+			margin-right: 10px;
+		}
+	}
+}
+// 카드
+.card				{
+	position: relative;
+	width: 252px;
+	height: 202px;
+	border: 1px solid #DDD;
+	margin-right: 10px;
+	ul {
+		position: absolute;
+		top: 10px;
+		left: 10px;		
+		li {
+			float: left;
+			font-size: 11px;
+			background-color: #DDD;
+			margin-right: 5px;
+			padding: 0px;
+			color: #FFF;
+			border-radius: 100%;
+			display: block;
+			width: 37px;
+			height: 37px;
+			text-align: center;
+			line-height: 37px;
+			font-weight: bold;
+		}
+		li:nth-child(1) {
+			background-color: #4a70ff;
+		}
+		li:nth-child(2) {
+			background-color: #dd7bff;
+		}
+	}
+	.thumbBox {
+		width: 250px;
+		height: 200px;
+		border: 1px solid #DDD;
+		border: none;
+		margin: 0px;
+	}
+	.info {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		background-color: rgba(255,255,255,0.9);
+		width: 100%;
+		height: 50px;
+		h3 {
+			padding: 0px 5px;
+			font-size: 12px;
+			color: #777;
+		}
+		 h2 {
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			padding: 0px 5px;
+			font-weight: bold;
+			margin: 0px;
+			margin-top: -3px;
+			font-size: 13px;
+		}
+	}
+	span {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		font-size: 12px;
+	}
+    i {
+		margin-right: 3px;
+	}
+	.like {
+		position: absolute;
+		background-color: @mainColor_point;
+		top: 0px;
+		right: 0px;
+		display: block;
+		min-width: 40px;
+		text-align: center;
+		height: 20px;
+		line-height: 20px;
+		font-size: 13px;
+		color: #FFF;
+	}
+}
+
+//----------------------------------------------------
+// 피드
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 앨범형
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 리스트형
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 뷰
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 마이페이지
+//----------------------------------------------------
+/* 레이아웃 */
+#mypage {
+	.side {
+		width: 240px;
+		float: left;
+		padding: 10px;		
+	}
+	.icon {
+		width: 35px;
+		margin-right: 10px;
+		float: left;
+	}
+	.cont {
+		width: 837px;
+		min-height: 500px;
+		float: left;
+	}
+	 .profile_bg {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 300px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.my_avatar {
+		position: absolute;
+		display: block;
+		width: 200px;
+		height: 200px;
+		border-radius: 100%;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border: 3px solid #FFF;
+		top: 50%;
+		left: 50%;
+		margin-top: -100px;
+		margin-left: -100px;
+	}
+	.form_wrap {
+		clear: both;
+		margin: 25px 70px;
+		h1 {
+			border: 1px solid #DDD;
+			margin-bottom: 10px;
+			font-size: 18px;
+			font-weight: bold;
+			color: #595959;
+			background-color: #f8f8f8;
+			padding: 5px 10px;
+			border-radius: 5px;
+		}
+	}
+	input, .form_wrap textarea {
+		border: 2px solid #FFF;
+		padding: 5px 10px;
+		width: 450px;
+		margin-right: 20px;
+		transition: 0.3s;
+		cursor: pointer;
+	}
+	input:focus, .form_wrap textarea:focus {
+		border: 2px solid #DDD;
+	}
+}
+
+/* 마이페이지 팔로워 */
+#my_follower {
+	width: 200px;
+	margin: 10px 0px;
+	height: 60px;
+	.avatar {
+		float: left;
+	}
+}
+
+/* 마이페이지 프로필*/
+.my {
+	border: 2px solid #7FD9F6;
+	background-color: #FFF;
+	padding: 0px 15px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+
+	.mynick {
+		font-size: 16px;
+		font-weight: bold;
+		margin: 10px 0px;
+		height: 60px;
+		line-height: 60px;
+		background-color: #F7F7F7;
+		border: 1px solid #DEDEDE;
+		border-radius: 10px;
+		span {
+			color: #414141;
+		}
+	}
+	.mypoint {
+		padding: 5px 10px;
+		li {
+			height: 40px;
+			line-height: 40px;
+		}
+	}
+	.mymenu {
+		padding: 5px 10px;
+		display: block;
+		width: 100%;
+		height: 28px;
+		li {
+			float: left;
+			a {
+				font-weight: bold;
+				margin-right: 10px;
+				color: #9b9b9b;
+			}
+		}
+	}
+	h1 {
+		font-weight: bold;
+		color: #555;
+	}
+	.badge {
+		float: right;
+		background-color: #ff2654;
+		width: 32px;
+		height: 32px;
+		line-height: 23px;
+		text-align: center;
+		margin-top: 5px;
+		border-radius: 100%;
+		color: #FFF;
+		font-weight: bold;
+		border: 2px solid #fff;
+		box-shadow: 1px 1px 3px #DDD;
+		cursor: pointer;
+	}
+}
+
+/* 마이페이지 카테고리 */
+.mypageCate {
+	padding: 10px;
+	li {
+		display: block;
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		border-bottom: 1px dotted #DDD;
+		transition: 0.3s;
+	}
+	li:hover {
+		background-color: #F7F7F7;
+	}
+}
+
+//----------------------------------------------------
+// 작가페이지
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 작가프로필
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 댓글
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 그림톡출품
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 그룹
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 팬아트출품
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 투표
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 팬픽
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 장터
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 쇼핑
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 채팅
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 이모티콘 출품
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 펜샵
+//----------------------------------------------------
+
+
+//----------------------------------------------------
+// 이모티콘 샵
+//----------------------------------------------------
+
+//----------------------------------------------------
+// 게시판
+//----------------------------------------------------
+

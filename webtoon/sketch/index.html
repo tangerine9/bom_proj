@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  
+  <title>스케치 설정</title>
+
+  <script type="text/javascript" src="./lib/jquery.1.10.2.min.js"></script>
+  <!-- fileend -->
+</head>
+<body>
+
+  <div id="content">
+    <div class="content-box">
+      <!-- jQuery UI -->
+      <script type="text/javascript" src="./lib/jquery.ui.core.1.10.3.min.js"></script>
+      <script type="text/javascript" src="./lib/jquery.ui.widget.1.10.3.min.js"></script>
+      <script type="text/javascript" src="./lib/jquery.ui.mouse.1.10.3.min.js"></script>
+      <script type="text/javascript" src="./lib/jquery.ui.draggable.1.10.3.min.js"></script>
+      
+      <!-- wColorPicker -->
+      <link rel="Stylesheet" type="text/css" href="./lib/wColorPicker.min.css" />
+      <script type="text/javascript" src="./lib/wColorPicker.min.js"></script>
+
+      <!-- wPaint -->
+      <link rel="Stylesheet" type="text/css" href="./wPaint.min.css" />
+      <script type="text/javascript" src="./wPaint.min.js"></script>
+      <script type="text/javascript" src="./plugins/main/src/wPaint.menu.main.js"></script>
+      <script type="text/javascript" src="./plugins/text/wPaint.menu.text.min.js"></script>
+      <script type="text/javascript" src="./plugins/shapes/wPaint.menu.main.shapes.min.js"></script>
+      <script type="text/javascript" src="./plugins/file/wPaint.menu.main.file.min.js"></script>
+
+      <style>
+		  .wPaint-menu {
+			  display: none;
+		  }
+		  #sketch_wrap {
+			  width: 500px;
+			  margin: 0 auto;
+		  }
+		  
+		  #wPaint {
+			  position:relative;
+			  width:500px;
+			  height:200px;
+			  background-color:#FFF; 
+			  border:1px solid #DDD;	  
+		  }
+		  
+		  #canvasImage {
+			  position:relative;
+			  width:500px;
+			  height:200px;
+			  background-color:#FFF;  
+		  }
+		  
+		  
+		  
+		  
+		  #swatch {
+			  display: block;
+			  width: 100%;
+			  height: 50px;
+			  margin: 0px;
+			  padding: 0px;
+		  }
+		  #swatch li {
+			  float: left;
+			  margin-right: 5px;
+			  list-style: none;
+		  }
+		  #swatch li a {
+			  cursor: pointer;
+			  display: block;
+			  width: 25px;
+			  height: 25px;
+			  border-radius: 100%;
+			  background-color: #DDD;
+			  border: 2px solid #FFF;
+			  transition: 0.3s;
+		  }
+		  #swatch li a.selected {
+			  border: 2px solid #000;
+		  }
+		  
+		  
+		  #penSize {
+			  display: block;
+			  width: 100%;
+			  height: 50px;
+			  margin: 0px;
+			  padding: 0px;
+		  }
+		  #penSize li {
+			  float: left;
+			  margin-right: 5px;
+			  list-style: none;
+		  }
+		  #penSize li a {
+			  cursor: pointer;
+			  display: block;
+			  width: 30px;
+			  height: 1px;
+			  background-color: #000;
+			  border: 2px solid #FFF;
+			  transition: 0.3s;
+		  }
+		  #penSize li a.selected {
+			  border: 2px solid gold;
+		  }
+		  
+		  #penType {
+			  display: block;
+			  width: 100%;
+			  height: 50px;
+			  margin: 0px;
+			  padding: 0px;
+		  }
+		  #penType li {
+			  float: left;
+			  margin-right: 5px;
+			  list-style: none;
+		  }
+		  #penType li a {
+			  cursor: pointer;
+				display: block;
+				width: 40px;
+				height: 40px;
+				background-color: #EEE;
+				border: 2px solid #FFF;
+				transition: 0.3s;
+				font-size: 12px;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 100%;
+		  }
+		  #penType li a.selected {
+			 border: 2px solid #000;
+		  }
+		  
+		  .sketch_btn {
+			  background-color: #414141;
+			  color: #FFF;
+			  font-weight: bold;
+			  padding: 5px 10px;
+			  font-size: 12px;
+			  border-radius: 5px;
+			  cursor: pointer;
+		  }
+	  </style>
+     
+      <div id="sketch_wrap">
+      	<ul id="swatch">
+      		<li><a id="swatch1" class="selected" style="background-color:#F00" onclick="color_pick(1,'#F00')"></a></li>
+      		<li><a id="swatch2" style="background-color:#FF6C00" onclick="color_pick(2,'#FF6C00')"></a></li>
+      		<li><a id="swatch3" style="background-color:#FFE100" onclick="color_pick(3,'#FFE100')"></a></li>
+      		<li><a id="swatch4" style="background-color:#A8FF00" onclick="color_pick(4,'#A8FF00')"></a></li>
+      		<li><a id="swatch5" style="background-color:#009CFF" onclick="color_pick(5,'#009CFF')"></a></li>
+      		<li><a id="swatch6" style="background-color:#0054FF" onclick="color_pick(6,'#0054FF')"></a></li>
+      		<li><a id="swatch7" style="background-color:#5700FF" onclick="color_pick(7,'#5700FF')"></a></li>
+      		<li><a id="swatch8" style="background-color:#474747" onclick="color_pick(8,'#474747')"></a></li>
+      		<li><a id="swatch9" style="background-color:#939393" onclick="color_pick(9,'#939393')"></a></li>
+      		<li><a id="swatch10" style="background-color:#d746e6" onclick="color_pick(10,'#d746e6')"></a></li>
+      	</ul>
+      	
+      	<ul id="penSize">
+      		<li><a id="penSize1" class="selected" style="height:1px" onclick="size_pick(1,1)"></a></li>
+      		<li><a id="penSize2" style="height:2px" onclick="size_pick(2,2)"></a></li>
+      		<li><a id="penSize3" style="height:5px" onclick="size_pick(3,5)"></a></li>
+      		<li><a id="penSize4" style="height:10px" onclick="size_pick(4,10)"></a></li>
+      		<li><a id="penSize5" style="height:20px" onclick="size_pick(5,20)"></a></li>
+      	</ul>
+      	
+      	<ul id="penType">
+      		<li><a id="penType1" class="selected" onclick="type_pick(1)">펜</a></li>
+      		<li><a id="penType2" onclick="type_pick(2)">지우개</a></li>
+      		<li><a id="penType3" onclick="type_pick(3)">선</a></li>
+      		<li><a id="penType4" onclick="type_pick(4)">사각형</a></li>
+      		<li><a id="penType5" onclick="type_pick(5)">원형</a></li>
+      	</ul>
+      	<a id="undo_btn" class="sketch_btn" onclick="undo_s()">되돌리기</a>
+      	<a id="redo_btn" class="sketch_btn" onclick="redo_s()">앞으로</a>
+      	<a id="clear_btn" class="sketch_btn" onclick="clear_s()">전체초기화</a>
+      	<a id="load_btn" class="sketch_btn" onclick="load_s()">그림추출</a>
+      	
+      	<!-- 캔버스 영역 -->
+      	<div id="wPaint"></div>	
+      	<div id="canvasImage"><img></div>
+      </div>
+      
+
+	  <style>
+		  
+	  </style>
+
+  	  <ul style="display:none;">
+  	  	<li><a onclick="undo_s()">되돌리기 undo</a></li>
+  	  	<li><a onclick="redo_s()">다시실행 redo</a></li>
+  	  	<li><a onclick="clear_s()">전체클리어 clear</a></li>
+  	  	<li><a onclick="rectangle_s()">사각형 rectangle</a></li>
+  	  	<li><a onclick="ellipse_s()">원형 ellipse</a></li>
+  	  	<li><a onclick="line_s()">선 line</a></li>
+  	  	<li><a onclick="pencil_s()">펜 pencil</a></li>
+  	  	<li><a onclick="eraser_s()">지우개 eraser</a></li>
+  	  	<li><a onclick="stroke_s()">스트로크</a></li>
+  	  	<li><a onclick="load_s()">로드</a></li>
+  	  </ul>
+     
+      <script>
+		  function color_pick(num,color) {
+			  $("#swatch li a").removeClass('selected');
+			  var target = '#swatch'+num;
+			  $(target).addClass('selected');
+			  $('#wPaint').wPaint('strokeStyle', color);
+		  }
+		  function size_pick(num,size) {
+			  $("#penSize li a").removeClass('selected');
+			  var target = '#penSize'+num;
+			  $(target).addClass('selected');
+			  $('#wPaint').wPaint('lineWidth', size);
+		  }
+		  function type_pick(num) {
+			  $("#penType li a").removeClass('selected');
+			  var target = '#penType'+num;
+			  $(target).addClass('selected');
+			  
+			  switch(num) {
+				  case 1 : $('#wPaint').wPaint('mode', 'pencil');
+					  break;
+				  case 2 : $('#wPaint').wPaint('mode', 'eraser');
+				  	break;
+				  case 3 : $('#wPaint').wPaint('mode', 'line');
+					  break;
+				  case 4 : $('#wPaint').wPaint('mode', 'rectangle');
+				  	break;
+				  case 5 : $('#wPaint').wPaint('mode', 'ellipse');
+				  	break;
+			  }
+		  }
+		  
+		  function undo_s() { $('#wPaint').wPaint('undo'); }
+		  function redo_s() { $('#wPaint').wPaint('redo'); }
+		  function clear_s() { 
+			  $('#wPaint').wPaint('clear');
+		  }
+		  function rectangle_s() {
+			  $('#wPaint').wPaint('mode', 'rectangle');
+		  }
+		  function ellipse_s() {
+			  $('#wPaint').wPaint('mode', 'ellipse');
+		  }
+		  function line_s() {
+			  $('#wPaint').wPaint('mode', 'line');
+		  }
+		  function pencil_s() { 
+			  $('#wPaint').setCursor('pencil');
+			  $('#wPaint').wPaint('mode', 'pencil');
+		  }
+		  function eraser_s() { 
+			  $('#wPaint').wPaint('mode', 'eraser');
+		  }		  
+		  function stroke_s() {
+			  $('#wPaint').wPaint('cursor', 'pencil');
+			  $('#wPaint').wPaint('strokeStyle', '#FFFF00');
+			  $('#wPaint').wPaint('lineWidth', '30');
+			  //$('#wPaint').wPaint('bg','#ff0000');
+								  
+		  }
+	  
+		  function load_s() {
+			  var imageData = $("#wPaint").wPaint("image");
+			  $("#canvasImage img").attr('src', imageData);
+			  
+			  
+				$.ajax({										
+					type: 'POST',
+					url: 'http://delphi14.cafe24.com/post/process.php',
+					dataType:'jsonp',
+					contentType: 'application/json',
+					async: true,
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+					data: {	
+						mode:'aaa'
+					},
+					success: function(json) {
+						alert('A');
+						if(json[0].chk == 'y'){
+							alert(json[0].chk);	
+						} else {
+							alert('B');
+						}
+					},
+					error: function() {
+						alert('C');
+					}
+				});
+			  
+		  }
+		  
+		  $(document).ready(function(){
+			  $('#wPaint').wPaint('strokeStyle', '#F00');
+		  })
+		  
+	  </script>
+      
+      
+      
+      <center id="wPaint-img"></center>
+
+      <script type="text/javascript">
+        var images = [
+          '/test/uploads/wPaint.png',
+        ];
+
+        function saveImg(image) {
+          var _this = this;
+
+          $.ajax({
+            type: 'POST',
+            url: '/test/upload.php',
+            data: {image: image},
+            success: function (resp) {
+
+              // internal function for displaying status messages in the canvas
+              _this._displayStatus('Image saved successfully');
+
+              // doesn't have to be json, can be anything
+              // returned from server after upload as long
+              // as it contains the path to the image url
+              // or a base64 encoded png, either will work
+              resp = $.parseJSON(resp);
+
+              // update images array / object or whatever
+              // is being used to keep track of the images
+              // can store path or base64 here (but path is better since it's much smaller)
+              images.push(resp.img);
+
+              // do something with the image
+              $('#wPaint-img').attr('src', image);
+            }
+          });
+        }
+
+        function loadImgBg () {
+
+          // internal function for displaying background images modal
+          // where images is an array of images (base64 or url path)
+          // NOTE: that if you can't see the bg image changing it's probably
+          // becasue the foregroud image is not transparent.
+          this._showFileModal('bg', images);
+        }
+
+        function loadImgFg () {
+
+          // internal function for displaying foreground images modal
+          // where images is an array of images (base64 or url path)
+          this._showFileModal('fg', images);
+        }
+
+        // init wPaint
+        $('#wPaint').wPaint({
+          menuOffsetLeft: -35,
+          menuOffsetTop: -50,
+          saveImg: saveImg,
+          loadImgBg: loadImgBg,
+          loadImgFg: loadImgFg
+        });
+      </script>
+    </div>
+  </div>
+</body>
+</html>
